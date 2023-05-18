@@ -8,7 +8,7 @@ import {
 } from "../../config";
 
 export default async function handler(req, res) {
-  const { text } = req.body;
+  const { text, mode } = req.body;
 
   const data = new FormData();
 
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   try {
     const result = await axios({
       method: "post",
-      url: `${process.env.REACT_APP_URL}text2img`,
+      url: `${process.env.REACT_APP_URL}${mode}`,
       data,
       headers: {
         "api-key": process.env.REACT_APP_API_KEY,

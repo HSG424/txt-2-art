@@ -1,10 +1,16 @@
 import { useState } from "react";
+import { generationModes } from "../config";
 
 function GenerateArtForm(props) {
   const [text, setText] = useState("");
+  const [mode, setMode] = useState("text2img");
 
   const textChangeHandler = (event) => {
     setText(event.target.value);
+  };
+
+  const modeChangeHandler = (event) => {
+    setMode(event.target.value);
   };
 
   async function submitHandler(event) {
@@ -14,6 +20,7 @@ function GenerateArtForm(props) {
       method: "POST",
       body: JSON.stringify({
         text,
+        mode,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -34,21 +41,29 @@ function GenerateArtForm(props) {
   return (
     <form onSubmit={submitHandler} className="flex flex-col mt-[134px]">
       <div className={`${flexCenter} mb-1`}>
-        <label className={textColor} for="mode">
+        <label className={textColor} htmlFor="mode">
           Choose mode:
         </label>
       </div>
 
       <div className={`${flexCenter} mb-[18px]`}>
-        <select name="mode" id="mode" className={inputStyle}>
-          <option value="default">Text To Image (default)</option>
-          <option value="impressionism">Impressionism</option>
-          <option value="surreal">Surreal Graphics</option>
+        <select
+          name="mode"
+          id="mode"
+          value={mode}
+          className={inputStyle}
+          onChange={modeChangeHandler}
+        >
+          {generationModes.map((mode) => (
+            <option value={mode.mode} key={mode.mode}>
+              {mode.label}
+            </option>
+          ))}
         </select>
       </div>
 
       <div className={`${flexCenter} mb-1`}>
-        <label className={textColor} for="text">
+        <label className={textColor} htmlFor="text">
           Creation text:
         </label>
       </div>
