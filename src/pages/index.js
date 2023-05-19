@@ -1,28 +1,26 @@
-import { Fragment } from "react";
 import Image from "next/image";
 import GenerateArtForm from "../components/GenerateArtForm";
 import { Montserrat } from "next/font/google";
+import Logo from "../components/Logo";
+import ExampleImage from "../components/ExampleImage";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <Fragment>
-      <header
-        className={`flex justify-center gap-x-[73px] ${mont.className} text-base`}
-      >
-        <Image
-          src="/logo.png"
-          alt="Logo"
-          className="mt-[69px] mb-16"
-          width={270}
-          height={1}
-          priority
-        />
-        <GenerateArtForm />
+    <div className={`${mont.className} text-base text-gray-100 mt-[33px]`}>
+      <header className="flex justify-center">
+        <div className="flex justify-between w-[800px]">
+          <Logo />
+          <GenerateArtForm />
+        </div>
       </header>
-      <main></main>
-      <footer></footer>
-    </Fragment>
+
+      <div className="flex justify-center">
+        <main className="mt-[45px] pt-[31px] border-t border-gray-700 w-[847px]">
+          <ExampleImage />
+        </main>
+      </div>
+    </div>
   );
 }

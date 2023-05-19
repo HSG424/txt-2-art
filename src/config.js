@@ -11,21 +11,42 @@ export const generationModes = [
   {
     mode: "text2img",
     label: "Text2Img (default)",
+    img: {
+      description: "Text2Img: the default engine and my personal favorite.",
+      caption: "Einstein wearing vr headset",
+    },
   },
   {
     mode: "impressionism-painting-generator",
     label: "Impressionism",
+    img: {
+      description:
+        "Impressionism: The 19th-century art movement characterized by relatively small, thin, yet visible brush strokes.",
+      caption: "Anthony Bourdain drinking a beer",
+    },
   },
   {
     mode: "surreal-graphics-generator",
     label: "Surreal",
+    img: {
+      description: "Surreal...",
+      caption: "Angkor Thom",
+    },
   },
   {
     mode: "3d-character-generator",
     label: "3d-character",
+    img: {
+      description: "3d-character-generator",
+      caption: "starcraft terran medic",
+    },
   },
   {
     mode: "fantasy-world-generator",
     label: "Fantasy World",
+    img: {
+      description: "Fantasy World Generator",
+      caption: "post-apocalyptic Tokyo",
+    },
   },
 ];

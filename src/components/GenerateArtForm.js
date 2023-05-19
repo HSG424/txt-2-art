@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { generationModes } from "../config";
 
-function GenerateArtForm(props) {
+function GenerateArtForm() {
   const [text, setText] = useState("");
   const [mode, setMode] = useState("text2img");
 
@@ -33,20 +33,15 @@ function GenerateArtForm(props) {
   }
 
   // common tailwind styling
-  const textColor = "text-gray-100";
-  const flexCenter = "flex justify-center";
   const inputStyle =
-    "text-[15px] text-center w-60 bg-gray-200 text-gray-900 rounded-md pt-[8px] pb-[9px] px-[7px] focus:ring-4 focus:ring-blue-300";
+    "w-[209px] bg-gray-200 text-gray-900 rounded-md px-[8px] py-[6px] focus:ring-4 focus:ring-blue-300";
+  const inputRowStyle = "flex justify-end items-center gap-x-[9px]";
 
   return (
-    <form onSubmit={submitHandler} className="flex flex-col mt-[134px]">
-      <div className={`${flexCenter} mb-1`}>
-        <label className={textColor} htmlFor="mode">
-          Choose mode:
-        </label>
-      </div>
+    <form onSubmit={submitHandler} className="text-[15px]">
+      <div className={`${inputRowStyle} mb-[13px]`}>
+        <label htmlFor="mode">Choose mode:</label>
 
-      <div className={`${flexCenter} mb-[18px]`}>
         <select
           name="mode"
           id="mode"
@@ -62,13 +57,9 @@ function GenerateArtForm(props) {
         </select>
       </div>
 
-      <div className={`${flexCenter} mb-1`}>
-        <label className={textColor} htmlFor="text">
-          Creation text:
-        </label>
-      </div>
+      <div className={inputRowStyle}>
+        <label htmlFor="text">Creation text:</label>
 
-      <div className={`${flexCenter} mb-[23px]`}>
         <input
           className={inputStyle}
           type="text"
@@ -81,9 +72,9 @@ function GenerateArtForm(props) {
         />
       </div>
 
-      <div className={flexCenter}>
+      <div className="flex justify-end">
         <button
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg px-[21px] pt-[12px] pb-[11px]"
+          className="text-base mt-[15px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-3xl py-[11px] px-[24px]"
           disabled={!text.length > 0}
         >
           Generate
