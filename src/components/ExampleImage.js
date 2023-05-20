@@ -1,7 +1,10 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import { Context } from "../store/ContextProvider";
 import Image from "next/image";
 
 function ExampleImage() {
+  const { mode } = useContext(Context);
+
   const boldStyle = "font-medium text-gray-50";
 
   return (
@@ -9,17 +12,17 @@ function ExampleImage() {
       <div className="flex justify-center mb-[6px]">
         <div className="flex justify-between w-[800px]">
           <p>
-            text: <span className={boldStyle}>Einstein wearing vr headset</span>
+            text: "<span className={boldStyle}>{mode.img.text}</span>"
           </p>
           <p>
-            mode: <span className={boldStyle}>Text2Img</span>
+            mode: <span className={boldStyle}>{mode.label}</span>
           </p>
         </div>
       </div>
 
       <div className="flex justify-center">
         <Image
-          src="/example.jpeg"
+          src={`/example-imgs/${mode.img.name}`}
           alt="Example image"
           width={800}
           height={800}

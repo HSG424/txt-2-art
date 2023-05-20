@@ -10,43 +10,42 @@ export const defaultErrMsg = "Error. Please try again.";
 export const generationModes = [
   {
     mode: "text2img",
-    label: "Text2Img (default)",
+    label: "Text2Img",
     img: {
-      description: "Text2Img: the default engine and my personal favorite.",
-      caption: "Einstein wearing vr headset",
+      name: "text2img.jpg",
+      text: "Einstein wearing vr headset",
     },
   },
   {
     mode: "impressionism-painting-generator",
     label: "Impressionism",
     img: {
-      description:
-        "Impressionism: The 19th-century art movement characterized by relatively small, thin, yet visible brush strokes.",
-      caption: "Anthony Bourdain drinking a beer",
+      name: "impressionism.jpg",
+      text: "Anthony Bourdain drinking a beer",
     },
   },
   {
     mode: "surreal-graphics-generator",
     label: "Surreal",
     img: {
-      description: "Surreal...",
-      caption: "Angkor Thom",
+      name: "surreal-graphics.jpg",
+      text: "Angkor Thom",
     },
   },
   {
     mode: "3d-character-generator",
     label: "3d-character",
     img: {
-      description: "3d-character-generator",
-      caption: "starcraft terran medic",
+      name: "3d-character.jpg",
+      text: "starcraft terran medic",
     },
   },
   {
     mode: "fantasy-world-generator",
     label: "Fantasy World",
     img: {
-      description: "Fantasy World Generator",
-      caption: "post-apocalyptic Tokyo",
+      name: "fantasy-world.jpg",
+      text: "post-apocalyptic Tokyo",
     },
   },
 ];

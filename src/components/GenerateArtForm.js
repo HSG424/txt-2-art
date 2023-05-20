@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Context } from "../store/ContextProvider";
 import { generationModes } from "../config";
 
 function GenerateArtForm() {
   const [text, setText] = useState("");
-  const [mode, setMode] = useState("text2img");
+
+  const {
+    updateMode,
+    mode: { mode },
+  } = useContext(Context);
 
   const textChangeHandler = (event) => {
     setText(event.target.value);
   };
 
   const modeChangeHandler = (event) => {
-    setMode(event.target.value);
+    updateMode(event.target.value);
   };
 
   async function submitHandler(event) {
