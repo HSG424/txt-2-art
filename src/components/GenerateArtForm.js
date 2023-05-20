@@ -38,9 +38,9 @@ function GenerateArtForm() {
   const inputRowStyle = "flex justify-end items-center gap-x-[9px]";
 
   return (
-    <form onSubmit={submitHandler} className="text-[15px]">
+    <form onSubmit={submitHandler}>
       <div className={`${inputRowStyle} mb-[13px]`}>
-        <label htmlFor="mode">Choose mode:</label>
+        <label htmlFor="mode">Choose Mode:</label>
 
         <select
           name="mode"
@@ -58,14 +58,14 @@ function GenerateArtForm() {
       </div>
 
       <div className={inputRowStyle}>
-        <label htmlFor="text">Creation text:</label>
+        <label htmlFor="text">Enter Text:</label>
 
         <input
           className={inputStyle}
           type="text"
           id="text"
           value={text}
-          placeholder="Enter something clever..."
+          placeholder="Write something clever..."
           onChange={textChangeHandler}
           maxLength={50}
           disabled={false}
@@ -74,7 +74,7 @@ function GenerateArtForm() {
 
       <div className="flex justify-end">
         <button
-          className="text-base mt-[15px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-3xl py-[11px] px-[24px]"
+          className="mt-[15px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-3xl py-[11px] px-[24px]"
           disabled={!text.length > 0}
         >
           Generate

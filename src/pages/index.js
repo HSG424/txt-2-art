@@ -8,7 +8,7 @@ const mont = Montserrat({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className={`${mont.className} text-base text-gray-100 mt-[33px]`}>
+    <div className={`${mont.className} text-[15px] text-gray-100 mt-[33px]`}>
       <header className="flex justify-center">
         <div className="flex justify-between w-[800px]">
           <Logo />
@@ -17,7 +17,7 @@ export default function Home() {
       </header>
 
       <div className="flex justify-center">
-        <main className="mt-[45px] pt-[31px] border-t border-gray-700 w-[847px]">
+        <main className="mt-[31px] pt-[27px] border-t border-gray-700 w-[847px]">
           <ExampleImage />
         </main>
       </div>
