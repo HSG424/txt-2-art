@@ -7,7 +7,10 @@ function GenerateArtForm() {
 
   const {
     updateMode,
+    updateGeneratedImage,
+    clearGeneratedImage,
     mode: { mode },
+    setIsLoading,
   } = useContext(Context);
 
   const textChangeHandler = (event) => {
@@ -15,11 +18,14 @@ function GenerateArtForm() {
   };
 
   const modeChangeHandler = (event) => {
+    clearGeneratedImage();
     updateMode(event.target.value);
   };
 
   async function submitHandler(event) {
     event.preventDefault();
+
+    setIsLoading(true);
 
     const response = await fetch("/api/generate", {
       method: "POST",
@@ -34,7 +40,9 @@ function GenerateArtForm() {
 
     const data = await response.json();
 
-    console.log("data@: ", data);
+    updateGeneratedImage(data.output_url, text);
+
+    setIsLoading(false);
   }
 
   // common tailwind styling

@@ -1,18 +1,25 @@
 import { Fragment, useContext } from "react";
 import { Context } from "../store/ContextProvider";
 import Image from "next/image";
+import Loading from "./Loading";
 
 function ExampleImage() {
-  const { mode } = useContext(Context);
+  const { mode, generatedImage, isLoading } = useContext(Context);
+
+  const imgSrc = generatedImage.url
+    ? generatedImage.url
+    : `/example-imgs/${mode.img.name}`;
 
   const boldStyle = "font-medium text-gray-50";
 
-  return (
+  const imgTxt = generatedImage.text ? generatedImage.text : mode.img.text;
+
+  const mainImg = (
     <Fragment>
       <div className="flex justify-center mb-[6px]">
         <div className="flex justify-between w-[800px]">
           <p>
-            text: "<span className={boldStyle}>{mode.img.text}</span>"
+            text: "<span className={boldStyle}>{imgTxt}</span>"
           </p>
           <p>
             mode: <span className={boldStyle}>{mode.label}</span>
@@ -22,8 +29,10 @@ function ExampleImage() {
 
       <div className="flex justify-center">
         <Image
-          src={`/example-imgs/${mode.img.name}`}
-          alt="Example image"
+          src={imgSrc}
+          alt={imgTxt}
+          placeholder="blur"
+          blurDataURL="/example-imgs/10x10.png"
           width={800}
           height={800}
           priority
@@ -31,6 +40,8 @@ function ExampleImage() {
       </div>
     </Fragment>
   );
+
+  return isLoading ? <Loading /> : mainImg;
 }
 
 export default ExampleImage;
