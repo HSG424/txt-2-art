@@ -13,6 +13,7 @@ function GenerateArtForm() {
     mode: { mode },
     isLoading,
     setIsLoading,
+    setRequestError,
   } = useContext(Context);
 
   const textChangeHandler = (event) => {
@@ -43,6 +44,7 @@ function GenerateArtForm() {
     if (!checkInput()) return;
 
     setIsLoading(true);
+    setRequestError("");
 
     const response = await fetch("/api/generate", {
       method: "POST",
@@ -57,7 +59,11 @@ function GenerateArtForm() {
 
     const data = await response.json();
 
-    updateGeneratedImage(data.output_url, text);
+    if (!data.error) {
+      updateGeneratedImage(data.output_url, text);
+    } else {
+      setRequestError(data.error);
+    }
 
     setIsLoading(false);
   }

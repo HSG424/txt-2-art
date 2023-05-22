@@ -12,6 +12,7 @@ const ContextProvider = (props) => {
   const [mode, setMode] = useState(generationModes[1]);
   const [generatedImage, setGeneratedImage] = useState(emptyGeneratedImage);
   const [isLoading, setIsLoading] = useState(false);
+  const [requestError, setRequestError] = useState("");
 
   const updateMode = (mode) => {
     setMode(generationModes.find((element) => element.mode === mode));
@@ -36,6 +37,8 @@ const ContextProvider = (props) => {
     generatedImage,
     isLoading,
     setIsLoading,
+    requestError,
+    setRequestError,
   };
 
   return <Context.Provider value={context}>{props.children}</Context.Provider>;

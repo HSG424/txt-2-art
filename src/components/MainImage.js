@@ -2,9 +2,10 @@ import { Fragment, useContext } from "react";
 import { Context } from "../store/ContextProvider";
 import Image from "next/image";
 import Loading from "./Loading";
+import RequestError from "./RequestError";
 
 function MainImage() {
-  const { mode, generatedImage, isLoading } = useContext(Context);
+  const { mode, generatedImage, isLoading, requestError } = useContext(Context);
 
   const imgSrc = generatedImage.url
     ? generatedImage.url
@@ -41,7 +42,13 @@ function MainImage() {
     </Fragment>
   );
 
-  return isLoading ? <Loading /> : mainImg;
+  return requestError ? (
+    <RequestError requestError={requestError} />
+  ) : isLoading ? (
+    <Loading />
+  ) : (
+    mainImg
+  );
 }
 
 export default MainImage;
