@@ -3,7 +3,7 @@ import { Context } from "../store/ContextProvider";
 import Image from "next/image";
 import Loading from "./Loading";
 
-function ExampleImage() {
+function MainImage() {
   const { mode, generatedImage, isLoading } = useContext(Context);
 
   const imgSrc = generatedImage.url
@@ -44,4 +44,4 @@ function ExampleImage() {
   return isLoading ? <Loading /> : mainImg;
 }
 
-export default ExampleImage;
+export default MainImage;

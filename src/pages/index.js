@@ -1,7 +1,7 @@
 import GenerateArtForm from "../components/GenerateArtForm";
 import { Montserrat } from "next/font/google";
 import Logo from "../components/Logo";
-import ExampleImage from "../components/ExampleImage";
+import MainImage from "../components/MainImage";
 import ContextProvider from "../store/ContextProvider";
 
 const mont = Montserrat({ subsets: ["latin"] });
@@ -19,7 +19,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <main className="mt-[31px] pt-[27px] border-t border-gray-700 w-[847px]">
-            <ExampleImage />
+            <MainImage />
           </main>
         </div>
       </div>

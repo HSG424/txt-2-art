@@ -4,12 +4,14 @@ import { generationModes } from "../config";
 
 function GenerateArtForm() {
   const [text, setText] = useState("");
+  const [formError, setFormError] = useState("");
 
   const {
     updateMode,
     updateGeneratedImage,
     clearGeneratedImage,
     mode: { mode },
+    isLoading,
     setIsLoading,
   } = useContext(Context);
 
@@ -22,8 +24,23 @@ function GenerateArtForm() {
     updateMode(event.target.value);
   };
 
+  const checkInput = () => {
+    setFormError("");
+
+    if (text.length < 3) {
+      setFormError("Text must be greater than 2 characters.");
+      return false;
+    } else {
+      return true;
+    }
+
+    return false;
+  };
+
   async function submitHandler(event) {
     event.preventDefault();
+
+    if (!checkInput()) return;
 
     setIsLoading(true);
 
@@ -50,6 +67,8 @@ function GenerateArtForm() {
     "w-[209px] bg-gray-200 text-gray-900 rounded-md px-[8px] py-[6px] focus:ring-4 focus:ring-blue-300";
   const inputRowStyle = "flex justify-end items-center gap-x-[9px]";
 
+  const inputDisabled = isLoading ? true : false;
+
   return (
     <form onSubmit={submitHandler}>
       <div className={`${inputRowStyle} mb-[13px]`}>
@@ -61,6 +80,7 @@ function GenerateArtForm() {
           value={mode}
           className={inputStyle}
           onChange={modeChangeHandler}
+          disabled={inputDisabled}
         >
           {generationModes.map((mode) => (
             <option value={mode.mode} key={mode.mode}>
@@ -81,17 +101,20 @@ function GenerateArtForm() {
           placeholder="Write something clever..."
           onChange={textChangeHandler}
           maxLength={50}
-          disabled={false}
+          disabled={inputDisabled}
         />
       </div>
 
       <div className="flex justify-end">
         <button
           className="mt-[15px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-3xl py-[11px] px-[24px]"
-          disabled={!text.length > 0}
+          disabled={inputDisabled}
         >
           Generate
         </button>
+      </div>
+      <div className="flex justify-end mt-[14px] text-[14px] text-yellow-300">
+        <p>{formError}</p>
       </div>
     </form>
   );
