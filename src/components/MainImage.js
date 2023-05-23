@@ -2,7 +2,7 @@ import { Fragment, useContext } from "react";
 import { Context } from "../store/ContextProvider";
 import Image from "next/image";
 import Loading from "./Loading";
-import RequestError from "./RequestError";
+import Error from "./Error";
 
 function MainImage() {
   const { mode, generatedImage, isLoading, requestError } = useContext(Context);
@@ -43,7 +43,12 @@ function MainImage() {
   );
 
   return requestError ? (
-    <RequestError requestError={requestError} />
+    <Error
+      wrapperClassName="flex justify-center"
+      contentClassName="w-[535px] text-center text-base leading-[29px] text-yellow-300"
+    >
+      {requestError}
+    </Error>
   ) : isLoading ? (
     <Loading />
   ) : (

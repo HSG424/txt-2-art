@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
-import { Context } from "../store/ContextProvider";
-import { generationModes } from "../config";
+import { Context } from "../../store/ContextProvider";
+import { Button, EnterText, SelectMode } from ".";
+import Error from "../Error";
 
 function GenerateArtForm() {
   const [text, setText] = useState("");
@@ -77,51 +78,33 @@ function GenerateArtForm() {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className={`${inputRowStyle} mb-[13px]`}>
-        <label htmlFor="mode">Choose Mode:</label>
+      <SelectMode
+        name="mode"
+        id="mode"
+        inputRowStyle={inputRowStyle}
+        mode={mode}
+        inputStyle={inputStyle}
+        modeChangeHandler={modeChangeHandler}
+        inputDisabled={inputDisabled}
+      />
 
-        <select
-          name="mode"
-          id="mode"
-          value={mode}
-          className={inputStyle}
-          onChange={modeChangeHandler}
-          disabled={inputDisabled}
-        >
-          {generationModes.map((mode) => (
-            <option value={mode.mode} key={mode.mode}>
-              {mode.label}
-            </option>
-          ))}
-        </select>
-      </div>
+      <EnterText
+        id="text"
+        inputRowStyle={inputRowStyle}
+        inputStyle={inputStyle}
+        text={text}
+        textChangeHandler={textChangeHandler}
+        inputDisabled={inputDisabled}
+        placeholder="Write something clever..."
+      />
 
-      <div className={inputRowStyle}>
-        <label htmlFor="text">Enter Text:</label>
+      <Button inputDisabled={inputDisabled} />
 
-        <input
-          className={inputStyle}
-          type="text"
-          id="text"
-          value={text}
-          placeholder="Write something clever..."
-          onChange={textChangeHandler}
-          maxLength={50}
-          disabled={inputDisabled}
-        />
-      </div>
-
-      <div className="flex justify-end">
-        <button
-          className="mt-[15px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-3xl py-[11px] px-[24px] disabled:bg-blue-800"
-          disabled={inputDisabled}
-        >
-          Generate
-        </button>
-      </div>
-      <div className="flex justify-end mt-[14px] text-[14px] text-yellow-300">
-        <p>{formError}</p>
-      </div>
+      {formError && (
+        <Error wrapperClassName="flex justify-end mt-[14px] text-[14px] text-yellow-300">
+          {formError}
+        </Error>
+      )}
     </form>
   );
 }

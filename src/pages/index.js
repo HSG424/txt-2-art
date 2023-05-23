@@ -1,4 +1,4 @@
-import GenerateArtForm from "../components/GenerateArtForm";
+import GenerateArtForm from "../components/form/GenerateArtForm";
 import { Montserrat } from "next/font/google";
 import Logo from "../components/Logo";
 import MainImage from "../components/MainImage";
