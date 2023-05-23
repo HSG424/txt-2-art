@@ -28,7 +28,7 @@ export const generationModes = [
     mode: "surreal-graphics-generator",
     label: "Surreal",
     img: {
-      name: "surreal-graphics.jpg",
+      name: "surreal-graphics-generator.jpg",
       text: "Angkor Thom",
     },
   },
@@ -36,8 +36,8 @@ export const generationModes = [
     mode: "3d-character-generator",
     label: "3d-character",
     img: {
-      name: "3d-character.jpg",
-      text: "starcraft terran medic",
+      name: "3d-character-generator.jpg",
+      text: "Ninja Man",
     },
   },
   {

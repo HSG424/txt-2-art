@@ -9,7 +9,7 @@ const emptyGeneratedImage = {
 };
 
 const ContextProvider = (props) => {
-  const [mode, setMode] = useState(generationModes[1]);
+  const [mode, setMode] = useState(generationModes[0]);
   const [generatedImage, setGeneratedImage] = useState(emptyGeneratedImage);
   const [isLoading, setIsLoading] = useState(false);
   const [requestError, setRequestError] = useState("");
