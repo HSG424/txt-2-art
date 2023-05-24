@@ -7,6 +7,9 @@ export const filterErrMsg =
   "Txt2Art filters explicit content. The filtering system can often be too sensitive. Sorry, for the inconvenience. Please try again!";
 export const defaultErrMsg = "Error. Please try again.";
 
+export const loadingMsg =
+  "Image Generation takes about 25 seconds. Even after the generated image appears, there are still a few more seconds of loading time. Please be patient - Thank You!";
+
 export const generationModes = [
   {
     mode: "text2img",

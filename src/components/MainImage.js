@@ -12,6 +12,8 @@ function MainImage() {
     : `/example-imgs/${mode.img.name}`;
 
   const boldStyle = "font-medium text-gray-50";
+  const textStyle =
+    "w-[535px] text-center text-base leading-[30px] text-yellow-300";
 
   const imgTxt = generatedImage.text ? generatedImage.text : mode.img.text;
 
@@ -43,14 +45,11 @@ function MainImage() {
   );
 
   return requestError ? (
-    <Error
-      wrapperClassName="flex justify-center"
-      contentClassName="w-[535px] text-center text-base leading-[29px] text-yellow-300"
-    >
+    <Error wrapperClassName="flex justify-center" contentClassName={textStyle}>
       {requestError}
     </Error>
   ) : isLoading ? (
-    <Loading />
+    <Loading textStyle={textStyle} />
   ) : (
     mainImg
   );

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import GenerateArtForm from "../components/form/GenerateArtForm";
 import { Montserrat } from "next/font/google";
 import Logo from "../components/Logo";
@@ -9,6 +10,10 @@ const mont = Montserrat({ subsets: ["latin"] });
 export default function Home() {
   return (
     <ContextProvider>
+      <Head>
+        <title>Txt 2 Art</title>
+        <meta name="robots" content="noindex" />
+      </Head>
       <div className={`${mont.className} text-[15px] text-gray-100 mt-[33px]`}>
         <header className="flex justify-center">
           <div className="flex justify-between w-[800px]">
