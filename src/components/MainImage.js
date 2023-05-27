@@ -1,10 +1,9 @@
 import { Fragment, useContext } from "react";
 import { Context } from "../store/ContextProvider";
+import { Loading, Error } from ".";
 import Image from "next/image";
-import Loading from "./Loading";
-import Error from "./Error";
 
-function MainImage() {
+export function MainImage() {
   const { mode, generatedImage, isLoading, requestError } = useContext(Context);
 
   const imgSrc = generatedImage.url
@@ -13,7 +12,7 @@ function MainImage() {
 
   const boldStyle = "font-medium text-gray-50";
   const textStyle =
-    "w-[535px] text-center text-base leading-[30px] text-yellow-300";
+    "w-[535px] text-center text-base leading-[30px] border-b border-gray-700 pb-[27px] mb-[3px] px-[16px]";
 
   const imgTxt = generatedImage.text ? generatedImage.text : mode.img.text;
 
@@ -45,14 +44,15 @@ function MainImage() {
   );
 
   return requestError ? (
-    <Error wrapperClassName="flex justify-center" contentClassName={textStyle}>
+    <Error
+      wrapperClassName="flex justify-center mt-[5px]"
+      contentClassName={`${textStyle} text-red-700`}
+    >
       {requestError}
     </Error>
   ) : isLoading ? (
-    <Loading textStyle={textStyle} />
+    <Loading textStyle={`${textStyle} text-yellow-300`} />
   ) : (
     mainImg
   );
 }
-
-export default MainImage;

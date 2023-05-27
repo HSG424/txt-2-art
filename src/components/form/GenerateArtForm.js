@@ -1,9 +1,8 @@
 import { useState, useContext } from "react";
 import { Context } from "../../store/ContextProvider";
-import { Button, EnterText, SelectMode } from ".";
-import Error from "../Error";
+import { Button, EnterText, SelectMode, Error } from ".";
 
-function GenerateArtForm() {
+export function GenerateArtForm() {
   const [text, setText] = useState("");
   const [formError, setFormError] = useState("");
 
@@ -98,15 +97,13 @@ function GenerateArtForm() {
         placeholder="Write something clever..."
       />
 
-      <Button inputDisabled={inputDisabled} />
+      <Button inputDisabled={inputDisabled}>Generate</Button>
 
       {formError && (
-        <Error wrapperClassName="flex justify-end mt-[14px] text-[14px] text-yellow-300">
+        <Error wrapperClassName="flex justify-end mt-[14px] text-[14px] text-red-600">
           {formError}
         </Error>
       )}
     </form>
   );
 }
-
-export default GenerateArtForm;

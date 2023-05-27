@@ -4,7 +4,7 @@ export const imgWidth = "800";
 export const imgHeight = "800";
 
 export const filterErrMsg =
-  "Txt2Art filters explicit content. The filtering system can often be too sensitive. Sorry, for the inconvenience. Please try again!";
+  "Error: Txt2Art filters explicit content and is often too sensitive. Sorry for the inconvenience. Please try again!";
 export const defaultErrMsg = "Error. Please try again.";
 
 export const loadingMsg =

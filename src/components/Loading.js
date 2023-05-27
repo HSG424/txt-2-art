@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import { loadingMsg } from "../config";
 
-function Loading(props) {
+export function Loading(props) {
   return (
     <Fragment>
       <div className="flex justify-center" role="status">
         <svg
           aria-hidden="true"
-          className="w-[37px] h-[37px] mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className="w-[38px] h-[38px] mt-[15px] mb-[24px] text-gray-700 animate-spin fill-blue-700"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,10 +24,8 @@ function Loading(props) {
         <span className="sr-only">Loading...</span>
       </div>
       <div className="flex justify-center">
-        <p className={`${props.textStyle} mt-[21px]`}>{loadingMsg}</p>
+        <p className={props.textStyle}>{loadingMsg}</p>
       </div>
     </Fragment>
   );
 }
-
-export default Loading;

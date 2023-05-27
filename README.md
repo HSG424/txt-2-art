@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Txt 2 Art
 
-## Getting Started
+Txt 2 Art is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+It is an app that converts text to an image.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Image generation is made possible by the [DeepAI API](https://deepai.org/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Live deployment: ...
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Example Image
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+text: "Einstein wearing vr headset"
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![Example Image](/public/example-imgs/text2img.jpg "Example Image")
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+1. `git clone https://github.com/HSG424/txt-2-art.git`
 
-To learn more about Next.js, take a look at the following resources:
+2. `cd txt-2-art`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. `npm install`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. `npm run dev`
 
-## Deploy on Vercel
+## Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Fred Han** - (https://github.com/HSG424)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License
