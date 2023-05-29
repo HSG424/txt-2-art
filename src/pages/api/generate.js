@@ -17,7 +17,8 @@ export default async function handler(req, res) {
   data.append("width", imgWidth);
   data.append("height", imgHeight);
 
-  console.log("ONLY THE URL", process.env.REACT_APP_URL);
+  console.log("URL: ", process.env.REACT_APP_URL);
+  console.log("KEY: ", process.env.REACT_APP_API_KEY);
 
   try {
     const result = await axios({
@@ -29,8 +30,12 @@ export default async function handler(req, res) {
       },
     });
 
+    console.log("result", result);
+
     res.status(200).json(result.data);
   } catch (err) {
+    console.log(err);
+
     const error = err.response.status === 400 ? filterErrMsg : defaultErrMsg;
     res.status(err.response.status).send({ error });
   }
