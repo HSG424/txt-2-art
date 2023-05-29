@@ -8,7 +8,7 @@ export const filterErrMsg =
 export const defaultErrMsg = "Error. Please try again.";
 
 export const loadingMsg =
-  "Image Generation takes about 25 seconds. Even after the generated image appears, there are still a few more seconds of loading time. Please be patient - Thank You!";
+  "Image Generation takes about 25 seconds. Even after the generated image appears, a few more seconds of loading time remain. Please be patient - Thank You!";
 
 export const generationModes = [
   {
