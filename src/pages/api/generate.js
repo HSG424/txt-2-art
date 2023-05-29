@@ -17,6 +17,8 @@ export default async function handler(req, res) {
   data.append("width", imgWidth);
   data.append("height", imgHeight);
 
+  console.log("ONLY THE URL", process.env.REACT_APP_URL);
+
   try {
     const result = await axios({
       method: "post",
