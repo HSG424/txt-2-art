@@ -1,12 +1,12 @@
 # Txt 2 Art
 
-Txt 2 Art is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[Txt 2 Art](https://txt-2-art.vercel.app/) is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and styled with [Tailwind CSS](https://tailwindcss.com/).
 
-It is an app that converts text to an image.
+It generates an image from text.
 
 Image generation is made possible by the [DeepAI API](https://deepai.org/).
 
-Live deployment: ...
+Live deployment: [https://txt-2-art.vercel.app/](https://txt-2-art.vercel.app/)
 
 ## Example Image
 
@@ -23,6 +23,24 @@ text: "Einstein wearing vr headset"
 3. `npm install`
 
 4. `npm run dev`
+
+- This app only works if environment variables for the url and key are added ([DeepAI API](https://deepai.org/)).
+
+## Key Files
+
+1. src/pages/index.js
+
+2. src/pages/api/generate.js
+
+3. src/components/form/GenerateArtForm.js
+
+4. src/components/Main.js
+
+5. src/components/ImageContent.js
+
+6. src/store/ContextProvider.js
+
+7. src/config.js
 
 ## Author
 

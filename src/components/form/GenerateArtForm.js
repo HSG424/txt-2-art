@@ -97,7 +97,7 @@ export function GenerateArtForm() {
         placeholder="Write something clever..."
       />
 
-      <Button inputDisabled={inputDisabled}>Generate!</Button>
+      <Button inputDisabled={inputDisabled}>Generate</Button>
 
       {formError && (
         <Error wrapperClassName="flex justify-end mt-[14px] text-[14px] text-red-600">
