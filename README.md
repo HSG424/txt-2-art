@@ -2,7 +2,7 @@
 
 [Txt 2 Art](https://txt-2-art.vercel.app/) is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and styled with [Tailwind CSS](https://tailwindcss.com/).
 
-It generates an image from text.
+The main purpose of [Txt 2 Art](https://txt-2-art.vercel.app/) is to generate an image from text.
 
 Image generation is made possible by the [DeepAI API](https://deepai.org/).
 
@@ -24,7 +24,7 @@ text: "Einstein wearing vr headset"
 
 4. `npm run dev`
 
-- This app only works if environment variables for the url and key are added ([DeepAI API](https://deepai.org/)).
+- This app only works if environment variables for the url and API key are added.
 
 ## Key Files
 
