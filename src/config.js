@@ -1,16 +1,17 @@
-export const numOfImgs = "1";
+export const NUM_OF_IMGS = "1";
 
-export const imgWidth = "800";
-export const imgHeight = "800";
+export const IMG_WIDTH = "800";
+export const IMG_HEIGHT = "800";
 
-export const filterErrMsg =
+export const FILTER_ERR_MSG =
   "Error: Txt2Art filters explicit content and is often too sensitive. Sorry for the inconvenience. Please try again!";
-export const defaultErrMsg = "Error. Please try again.";
 
-export const loadingMsg =
+export const DEFAULT_ERR_MSG = "Error. Please try again.";
+
+export const LOADING_MSG =
   "Image Generation takes about 25 seconds. Even after the generated image appears, a few more seconds of loading time remain. Please be patient - Thank You!";
 
-export const generationModes = [
+export const GENERATION_MODES = [
   {
     mode: "text2img",
     label: "Text2Img",

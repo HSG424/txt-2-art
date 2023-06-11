@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { generationModes } from "../config";
+import { GENERATION_MODES } from "../config";
 
 export const Context = React.createContext();
 
@@ -9,13 +9,13 @@ const emptyGeneratedImage = {
 };
 
 const ContextProvider = (props) => {
-  const [mode, setMode] = useState(generationModes[0]);
+  const [mode, setMode] = useState(GENERATION_MODES[0]);
   const [generatedImage, setGeneratedImage] = useState(emptyGeneratedImage);
   const [isLoading, setIsLoading] = useState(false);
   const [requestError, setRequestError] = useState("");
 
   const updateMode = (mode) => {
-    setMode(generationModes.find((element) => element.mode === mode));
+    setMode(GENERATION_MODES.find((element) => element.mode === mode));
   };
 
   const updateGeneratedImage = (url, text) => {

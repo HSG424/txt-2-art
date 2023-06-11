@@ -1,10 +1,10 @@
 import axios from "axios";
 import {
-  numOfImgs,
-  imgWidth,
-  imgHeight,
-  filterErrMsg,
-  defaultErrMsg,
+  NUM_OF_IMGS,
+  IMG_WIDTH,
+  IMG_HEIGHT,
+  FILTER_ERR_MSG,
+  DEFAULT_ERR_MSG,
 } from "../../config";
 
 export default async function handler(req, res) {
@@ -13,9 +13,9 @@ export default async function handler(req, res) {
   const data = new FormData();
 
   data.append("text", text);
-  data.append("grid_size", numOfImgs);
-  data.append("width", imgWidth);
-  data.append("height", imgHeight);
+  data.append("grid_size", NUM_OF_IMGS);
+  data.append("width", IMG_WIDTH);
+  data.append("height", IMG_HEIGHT);
 
   try {
     const result = await axios({
@@ -29,7 +29,8 @@ export default async function handler(req, res) {
 
     res.status(200).json(result.data);
   } catch (err) {
-    const error = err.response.status === 400 ? filterErrMsg : defaultErrMsg;
+    const error =
+      err.response.status === 400 ? FILTER_ERR_MSG : DEFAULT_ERR_MSG;
     res.status(err.response.status).send({ error });
   }
 }

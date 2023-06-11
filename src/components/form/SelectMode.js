@@ -1,4 +1,4 @@
-import { generationModes } from "../../config";
+import { GENERATION_MODES } from "../../config";
 import Label from "./Label";
 
 export function SelectMode(props) {
@@ -14,7 +14,7 @@ export function SelectMode(props) {
         onChange={props.modeChangeHandler}
         disabled={props.inputDisabled}
       >
-        {generationModes.map((mode) => (
+        {GENERATION_MODES.map((mode) => (
           <option value={mode.mode} key={mode.mode}>
             {mode.label}
           </option>

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { loadingMsg } from "../config";
+import { LOADING_MSG } from "../config";
 
 export function Loading(props) {
   return (
@@ -24,7 +24,7 @@ export function Loading(props) {
         <span className="sr-only">Loading...</span>
       </div>
       <div className="flex justify-center">
-        <p className={props.textStyle}>{loadingMsg}</p>
+        <p className={props.textStyle}>{LOADING_MSG}</p>
       </div>
     </Fragment>
   );
