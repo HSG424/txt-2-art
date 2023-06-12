@@ -7,8 +7,8 @@ export function SelectMode(props) {
       <Label htmlFor="mode">Choose Mode:</Label>
 
       <select
-        name={props.name}
-        id={props.id}
+        name="mode"
+        id="mode"
         value={props.mode}
         className={props.inputStyle}
         onChange={props.modeChangeHandler}

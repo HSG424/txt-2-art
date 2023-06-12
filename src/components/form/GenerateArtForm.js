@@ -1,9 +1,8 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { Context } from "../../store/ContextProvider";
 import { Button, EnterText, SelectMode, Error } from ".";
 
 export function GenerateArtForm() {
-  const [text, setText] = useState("");
   const [formError, setFormError] = useState("");
 
   const {
@@ -16,19 +15,19 @@ export function GenerateArtForm() {
     setRequestError,
   } = useContext(Context);
 
-  const textChangeHandler = (event) => {
-    setText(event.target.value);
-  };
+  const textInputRef = useRef();
 
   const modeChangeHandler = (event) => {
     clearGeneratedImage();
     updateMode(event.target.value);
   };
 
+  const enteredText = () => textInputRef.current.value;
+
   const checkInput = () => {
     setFormError("");
 
-    if (text.length < 3) {
+    if (enteredText().length < 3) {
       setFormError("Text must be greater than 2 characters.");
       return false;
     } else {
@@ -49,7 +48,7 @@ export function GenerateArtForm() {
     const response = await fetch("/api/generate", {
       method: "POST",
       body: JSON.stringify({
-        text,
+        text: enteredText(),
         mode,
       }),
       headers: {
@@ -60,7 +59,7 @@ export function GenerateArtForm() {
     const data = await response.json();
 
     if (!data.error) {
-      updateGeneratedImage(data.output_url, text);
+      updateGeneratedImage(data.output_url, enteredText());
     } else {
       setRequestError(data.error);
     }
@@ -78,8 +77,6 @@ export function GenerateArtForm() {
   return (
     <form onSubmit={submitHandler}>
       <SelectMode
-        name="mode"
-        id="mode"
         inputRowStyle={inputRowStyle}
         mode={mode}
         inputStyle={inputStyle}
@@ -88,13 +85,10 @@ export function GenerateArtForm() {
       />
 
       <EnterText
-        id="text"
         inputRowStyle={inputRowStyle}
         inputStyle={inputStyle}
-        text={text}
-        textChangeHandler={textChangeHandler}
+        ref={textInputRef}
         inputDisabled={inputDisabled}
-        placeholder="Write something clever..."
       />
 
       <Button inputDisabled={inputDisabled}>Generate</Button>
