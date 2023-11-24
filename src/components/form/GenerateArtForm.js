@@ -69,8 +69,8 @@ export function GenerateArtForm() {
 
   // common tailwind styling
   const inputStyle =
-    "w-full xs:w-[209px] bg-gray-200 text-gray-900 rounded-md px-[8px] py-[6px] focus:ring-4 focus:ring-blue-300";
-  const inputRowStyle = "flex justify-end items-center gap-x-[9px]";
+    "w-full xs:w-[13.0625rem] bg-gray-200 text-gray-900 rounded-md px-[0.5rem] py-[0.375rem] focus:ring-4 focus:ring-blue-300";
+  const inputRowStyle = "flex justify-end items-center gap-x-[0.5625rem]";
 
   const inputDisabled = isLoading ? true : false;
 
@@ -94,7 +94,7 @@ export function GenerateArtForm() {
       <Button inputDisabled={inputDisabled}>Generate</Button>
 
       {formError && (
-        <Error wrapperClassName="flex justify-end mt-[14px] text-[14px] text-red-600 text-center xs:text-left">
+        <Error wrapperClassName="flex justify-end mt-[0.875rem] text-[0.875rem] text-red-600 text-center xs:text-left">
           {formError}
         </Error>
       )}

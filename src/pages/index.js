@@ -13,17 +13,17 @@ export default function Home() {
         <meta name="robots" content="noindex" />
       </Head>
       <div
-        className={`${mont.className} text-[15px] text-gray-100 mt-[33px] pb-[49px]`}
+        className={`${mont.className} text-[0.9375rem] text-gray-100 mt-[2.0625rem] pb-[3.0625rem]`}
       >
         <header className="flex justify-center">
-          <div className="sm:flex sm:justify-between w-[240px] xs:w-auto sm:w-[800px] pr-0 sm:pr-[5px] md:pr-0">
+          <div className="sm:flex sm:justify-between w-[15rem] xs:w-auto sm:w-[50rem] pr-0 sm:pr-[0.3125rem] md:pr-0">
             <Logo />
             <GenerateArtForm />
           </div>
         </header>
 
         <div className="flex justify-center">
-          <main className="mt-[31px] pt-[27px] border-t border-gray-700 w-full md:w-[847px]">
+          <main className="mt-[1.9375rem] pt-[1.6875rem] border-t border-gray-700 w-full md:w-[52.9375rem]">
             <Main />
           </main>
         </div>

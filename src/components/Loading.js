@@ -7,7 +7,7 @@ export function Loading(props) {
       <div className="flex justify-center" role="status">
         <svg
           aria-hidden="true"
-          className="w-[38px] h-[38px] mt-[15px] mb-[24px] text-gray-700 animate-spin fill-blue-700"
+          className="w-[2.375rem] h-[2.375rem] mt-[0.9375rem] mb-[1.5rem] text-gray-700 animate-spin fill-blue-700"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

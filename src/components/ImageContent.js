@@ -14,9 +14,9 @@ export function ImageContent(props) {
 
   return (
     <Fragment>
-      <div className="flex justify-center mb-[23px] xs:mb-[6px]">
-        <div className="text-center xs:text-left block xs:flex justify-between px-[5px] md:px-0 w-full md:w-[800px]">
-          <p className="mb-[4px] xs:mb-0">
+      <div className="flex justify-center mb-[1.4375rem] xs:mb-[0.375rem]">
+        <div className="text-center xs:text-left block xs:flex justify-between px-[0.3125rem] md:px-0 w-full md:w-[50rem]">
+          <p className="mb-[0.25rem] xs:mb-0">
             <span className="hidden sm:inline">text: </span>"
             <span className={boldStyle}>{imgTxt}</span>"
           </p>

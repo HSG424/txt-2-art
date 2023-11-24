@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <div className="flex justify-center">
-      <footer className="mt-[12px]">
+      <footer className="mt-[0.75rem]">
         <p>
           Powered by:{" "}
           <a

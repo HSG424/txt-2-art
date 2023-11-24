@@ -3,7 +3,7 @@ import Label from "./Label";
 
 export function SelectMode(props) {
   return (
-    <div className={`${props.inputRowStyle} mb-[13px]`}>
+    <div className={`${props.inputRowStyle} mb-[0.8125rem]`}>
       <Label htmlFor="mode">Choose Mode:</Label>
 
       <select

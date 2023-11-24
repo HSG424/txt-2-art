@@ -6,11 +6,11 @@ export function Main() {
   const { mode, generatedImage, isLoading, requestError } = useContext(Context);
 
   const textStyle =
-    "w-[535px] text-center text-base leading-[30px] border-b border-gray-700 pb-[27px] mb-[3px] px-[33px] xs:px-[16px]";
+    "w-[33.4375rem] text-center text-base leading-[1.875rem] border-b border-gray-700 pb-[1.6875rem] mb-[0.1875rem] px-[2.0625rem] xs:px-[1rem]";
 
   return requestError ? (
     <Error
-      wrapperClassName="flex justify-center mt-[5px]"
+      wrapperClassName="flex justify-center mt-[0.3125rem]"
       contentClassName={`${textStyle} text-red-700`}
     >
       {requestError}
