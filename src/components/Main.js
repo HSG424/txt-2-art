@@ -6,7 +6,7 @@ export function Main() {
   const { mode, generatedImage, isLoading, requestError } = useContext(Context);
 
   const textStyle =
-    "w-[535px] text-center text-base leading-[30px] border-b border-gray-700 pb-[27px] mb-[3px] px-[16px]";
+    "w-[535px] text-center text-base leading-[30px] border-b border-gray-700 pb-[27px] mb-[3px] px-[33px] xs:px-[16px]";
 
   return requestError ? (
     <Error
