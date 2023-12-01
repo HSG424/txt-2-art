@@ -25,7 +25,7 @@ export const GENERATION_MODES = [
     label: "Impressionism",
     img: {
       name: "impressionism.jpg",
-      text: "Anthony Bourdain drinking a beer",
+      text: "floral garden",
     },
   },
   {
