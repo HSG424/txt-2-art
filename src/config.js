@@ -3,6 +3,8 @@ export const NUM_OF_IMGS = "1";
 export const IMG_WIDTH = "800";
 export const IMG_HEIGHT = "800";
 
+export const IMAGE_GENERATOR_VERSION = "hd";
+
 export const FILTER_ERR_MSG =
   "Error: Txt2Art filters explicit content and is often too sensitive. Sorry for the inconvenience. Please try again!";
 
@@ -26,14 +28,6 @@ export const GENERATION_MODES = [
     img: {
       name: "impressionism.jpg",
       text: "floral garden",
-    },
-  },
-  {
-    mode: "surreal-graphics-generator",
-    label: "Surreal",
-    img: {
-      name: "surreal-graphics-generator.jpg",
-      text: "Angkor Thom",
     },
   },
   {

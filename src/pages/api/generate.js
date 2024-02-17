@@ -5,6 +5,7 @@ import {
   IMG_HEIGHT,
   FILTER_ERR_MSG,
   DEFAULT_ERR_MSG,
+  IMAGE_GENERATOR_VERSION,
 } from "../../config";
 
 export default async function handler(req, res) {
@@ -16,6 +17,7 @@ export default async function handler(req, res) {
   data.append("grid_size", NUM_OF_IMGS);
   data.append("width", IMG_WIDTH);
   data.append("height", IMG_HEIGHT);
+  data.append("image_generator_version", IMAGE_GENERATOR_VERSION);
 
   try {
     const result = await axios({
