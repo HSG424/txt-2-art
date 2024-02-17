@@ -35,7 +35,7 @@ export const GENERATION_MODES = [
     label: "3d-character",
     img: {
       name: "3d-character-generator.jpg",
-      text: "Ninja Man",
+      text: "Captain America",
     },
   },
   {
@@ -43,7 +43,7 @@ export const GENERATION_MODES = [
     label: "Fantasy World",
     img: {
       name: "fantasy-world.jpg",
-      text: "post-apocalyptic Tokyo",
+      text: "futuristic city",
     },
   },
 ];
