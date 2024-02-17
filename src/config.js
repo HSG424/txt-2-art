@@ -10,8 +10,7 @@ export const FILTER_ERR_MSG =
 
 export const DEFAULT_ERR_MSG = "Error. Please try again.";
 
-export const LOADING_MSG =
-  "Image Generation takes about 15 seconds. Please be patient - Thank You!";
+export const LOADING_MSG = "Image Generation takes about 15 seconds.";
 
 export const GENERATION_MODES = [
   {
