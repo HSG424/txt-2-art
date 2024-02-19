@@ -15,10 +15,9 @@ export function ImageContent(props) {
   return (
     <Fragment>
       <div className="flex justify-center mb-[1.4375rem] xs:mb-[0.375rem]">
-        <div className="text-center xs:text-left block xs:flex justify-between px-[0.3125rem] md:px-0 w-full md:w-[50rem]">
-          <p className="mb-[0.25rem] xs:mb-0">
-            <span className="hidden sm:inline">text: </span>"
-            <span className={boldStyle}>{imgTxt}</span>"
+        <div className="text-center xs:text-left block xs:flex justify-between px-[0.3125rem] md:px-0 w-full xs:w-[40rem]">
+          <p className="mb-[0.125rem] xs:mb-0">
+            "<span className={boldStyle}>{imgTxt}</span>"
           </p>
           <p>
             mode: <span className={boldStyle}>{props.mode.label}</span>
@@ -32,8 +31,8 @@ export function ImageContent(props) {
           alt={imgTxt}
           placeholder="blur"
           blurDataURL="/example-imgs/10x10.png"
-          width={800}
-          height={800}
+          width={640}
+          height={512}
           priority
         />
       </div>
