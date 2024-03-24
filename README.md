@@ -12,7 +12,7 @@ Live deployment: [https://txt-2-art.vercel.app/](https://txt-2-art.vercel.app/)
 
 text: "Einstein wearing vr headset"
 
-![Example Image](/public/example-imgs/text2img.jpg "Example Image")
+![Example Image](/public/example-imgs/text2img.webp "Example Image")
 
 ## Installation
 
